@@ -1,0 +1,37 @@
+---
+- !ruby/object:CodebreakerRackApp::Score
+  name: sdf
+  success: lose
+  turns: 2
+- !ruby/object:CodebreakerRackApp::Score
+  name: qqqqqqqqqqqq
+  success: lose
+  turns: 2
+- !ruby/object:CodebreakerRackApp::Score
+  name: qwertyuiopas
+  success: lose
+  turns: 2
+- !ruby/object:CodebreakerRackApp::Score
+  name: qwer
+  success: lose
+  turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: assad
+  success: lose
+  turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: q
+  success: lose
+  turns: 7
