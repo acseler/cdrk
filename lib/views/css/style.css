@@ -1,0 +1,229 @@
+html,
+body {
+    margin: 0
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(
+            limegreen,
+            transparent
+    ),
+    linear-gradient(
+            90deg,
+            skyblue,
+            transparent
+    ),
+    linear-gradient(
+            -90deg,
+            coral,
+            transparent
+    );
+
+    background-blend-mode: screen;
+}
+
+body {
+    background: none;
+    height: 100vh;
+    display: flex;
+}
+
+#container {
+    margin: auto;
+    width: 1178px;
+    height: 100vh;
+}
+
+.welcome-section {
+    padding: 50px 0 50px 0;
+}
+
+.welcome-section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.end-game-section {
+    display: flex;
+    height: 550px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-game-message {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.end-game-buttons {
+    padding: 15px 0 0 0;
+    display: flex;
+}
+
+.match-code-wrap {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-blocks-wrap {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+}
+
+.match-code {
+    width: 120px;
+    height: 100px;
+    background: azure;
+    margin: 0 15px 0 15px;
+}
+
+.code-buttons {
+    padding: 20px 0 0 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 310px;
+}
+
+.try-button {
+    width: 100%;
+}
+
+.code-input {
+    text-align: center;
+}
+
+.hint-button {
+    width: 100%;
+}
+
+.turns {
+    width: 260px;
+    display: inline-block;
+}
+
+.hint-answer {
+    border-radius: 50%;
+    border: 2px solid #FE9565;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    top: 90px;
+    right: -47px;
+    padding: 3px 10px;
+    color: #fff;
+    background: #FF8A5D;
+}
+
+.score-table-section {
+    padding-top: 70px;
+}
+
+.player-name-field {
+    margin: auto;
+    width: 270px;
+    padding-top: 230px;
+}
+
+#scores {
+    display: table;
+    width: 200px;
+    margin: auto;
+    font-size: 15px;
+    color: #FF8D5A;
+}
+
+#scores td {
+	border-top: none;
+}
+
+#scores th {
+	border-top: none;
+}
+
+#score-table {
+    display: flex;
+    flex-direction: column;
+}
+
+#score-table a {
+    margin: 20px auto 0 auto;
+    width: 225px;
+}
+
+.button-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.result {
+    border-radius: 50%;
+    min-height: 33px;
+    min-width: 33px;
+    border: 2px solid #FE9565;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 3px 10px;
+    color: #fff;
+    background: #FF8A5D;
+}
+
+.code-result {
+    min-height: 33px;
+    display: flex;
+}
+
+.greeting {
+    padding: 18px 0 0 0;
+}
+
+.code {
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 10px;
+    min-height: 28px;
+}
+
+.top-players {
+    font-size: 45px;
+    color: #FD9667;
+    text-shadow: 1px 2px #695A5A;
+}
+
+
+
+.code-section {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .match-code-wrap {
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .score-table-section {
+        padding-top: 0px;
+    }
+
+    .player-name-field {
+        margin: auto;
+        width: 270px;
+        padding-top: 130px;
+    }
+}
