@@ -5,9 +5,8 @@ require 'codebreaker_rack_app/game_enums'
 # Module CodebreakerRackApp
 module CodebreakerRackApp
   RSpec.describe Game do
+    subject(:game) { Game.new }
     context '#start' do
-      let(:game) { Game.new }
-
       before { game.start }
 
       it 'generates secret code' do
@@ -22,7 +21,6 @@ module CodebreakerRackApp
     end
 
     context '#game_over?' do
-      let(:game) { Game.new }
       let(:correct_pass) { game.instance_variable_get(:@secret_code) }
       let(:wrong_pass) { '3333' }
       let(:hint) { 'hint' }
@@ -60,21 +58,21 @@ module CodebreakerRackApp
 
       context '#check_code' do
         [
-          %w(1234, ++++),
-          %w(1555, +),
-          %w(1255, ++),
-          %w(5235, ++),
-          %w(5534, ++),
-          %w(1235, +++),
-          %w(5234, +++),
-          %w(5243, +--),
-          %w(4266, +-),
-          %w(3124, +---),
-          %w(2134, ++--),
-          %w(6645, -),
-          %w(6145, --),
-          %w(2543, ---),
-          %w(4321, ----)
+          %w(1234 ++++),
+          %w(1555 +),
+          %w(1255 ++),
+          %w(5235 ++),
+          %w(5534 ++),
+          %w(1235 +++),
+          %w(5234 +++),
+          %w(5243 +--),
+          %w(4266 +-),
+          %w(3124 +---),
+          %w(2134 ++--),
+          %w(6645 -),
+          %w(6145 --),
+          %w(2543 ---),
+          %w(4321 ----)
         ].each do |bank|
           it "should return #{bank[1]}" do
             expect(game.send(:check_code, bank[0])).to eq bank[1]

@@ -3,3 +3,15 @@
   name: asdf
   success: win
   turns: 3
+- !ruby/object:CodebreakerRackApp::Score
+  name: qwe
+  success: win
+  turns: 6
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 12
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 12

@@ -3,7 +3,6 @@ require 'erb'
 require 'game'
 require 'file_helper'
 require 'game_enums'
-require 'game_helper'
 require 'score'
 
 module CodebreakerRackApp
