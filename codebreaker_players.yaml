@@ -15,3 +15,7 @@
   name: Vasya
   success: lose
   turns: 12
+- !ruby/object:CodebreakerRackApp::Score
+  name: Vasya
+  success: lose
+  turns: 12

@@ -37,6 +37,7 @@ module CodebreakerRackApp
 
     def match_code(code)
       @turns -= 1
+      return '++++' if @secret_code == code
       check_code(code)
     end
 

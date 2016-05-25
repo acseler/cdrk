@@ -54,11 +54,14 @@ module CodebreakerRackApp
           expect { game.send(:match_code, correct_pass) }
             .to change { game.instance_variable_get(:@turns) }.by(-1)
         end
+
+        it 'returns ++++ if code match secret_code' do
+          expect(game.send(:match_code, correct_pass)).to eq('++++')
+        end
       end
 
       context '#check_code' do
         [
-          %w(1234 ++++),
           %w(1555 +),
           %w(1255 ++),
           %w(5235 ++),
