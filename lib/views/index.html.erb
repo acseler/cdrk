@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codebreaker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+  <section class="welcome-section">
+    <h1 class="text-center"><a href="/">Welcome to Codebreaker</a></h1>
+  </section>
+  <section class="code-section">
+    <% if codebreaker %>
+      <div class="match-code-wrap">
+        <div class="code-result">
+          <% if result %>
+            <% if result[:res_of_match].size > 0 %>
+              <% result[:res_of_match].chars.each do |item| %>
+                <div class="result">
+                  <%= item %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="code">
+          <% if code %>
+            <div class="entered-code">
+              <%= code %>
+            </div>
+          <% end %>
+        </div>
+        <% unless end_game %>
+          <div class="code-buttons">
+            <form action="/turn" method="post">
+              <input type="text" name='code' placeholder="Try to guess a secret code"
+                     class="form-control code-input" pattern="^[1-6]{4}$" required>
+              <button class="btn btn-default try-button" name="try" type="submit">
+                Turns left
+                <span id="turns" class="badge">
+                  <%= codebreaker.turns %>
+                </span>
+              </button>
+            </form>
+            <form action="/hint" method="post">
+              <button class="btn btn-default hint-button" name="hint"
+                      <% if codebreaker.hint_count <= 0 %>
+                        disabled="disabled"
+                      <% end %>>
+                Hint <span id="hint-count" class="badge">
+                  <%= codebreaker.hint_count %>
+                </span>
+              </button>
+              <span class="hint-answer">
+                <%= codebreaker.hint %>
+              </span>
+            </form>
+          </div>
+        <% else %>
+          <div>
+            <% if result_success == 'win' %>
+              <div class="greeting">
+                <p class="end-game-message">Congratulations. You win!</p>
+              </div>
+            <% elsif result_success == 'lose' %>
+              <div class="greeting">
+                <p class="end-game-message">Game Over. You Lose!</p>
+              </div>
+            <% end %>
+            <div class="end-game-buttons">
+              <a href="/new_game" class="btn btn-default try-button" name="again" role="button">
+                Again
+              </a>
+              <a href="/save_score" type="button" class="btn btn-default try-button" name="save">
+                Save score
+              </a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="start-game">
+        <form action="/start_game" method="post">
+          <button class="btn btn-default btn-lg" type="submit">Start game
+          </button>
+        </form>
+      </div>
+    <% end %>
+  </section>
+</div>
+</body>
+</html>

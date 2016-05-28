@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codebreaker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+  <section class="welcome-section">
+    <h1 class="text-center"><a href="">Welcome to Codebreaker</a></h1>
+  </section>
+  <section class="score-table-section">
+    <% if score_table && hide_save_form %>
+      <div id="score-table">
+        <table id='scores' class="table table-hover">
+          <caption class="text-center top-players">Top 10</caption>
+          <tr>
+            <th>Name</th>
+            <th>Success</th>
+            <th>Turns</th>
+          </tr>
+          <% score_table.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.success %></td>
+              <td><%= item.turns %></td>
+            </tr>
+          <% end %>
+        </table>
+        <a href="/new_game" class="btn btn-default" role="button">Play again</a>
+      </div>
+    <% else %>
+      <form class="player-name-field" action="/save_score" method="post">
+        <div class="input-group">
+          <input type="text" name="name" class="form-control"
+                 placeholder="Enter your name" pattern="^[a-zA-Z]{1,12}$"
+                 oninvalid="Too long" required>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" name="save_player-score">Save</button>
+        </span>
+        </div>
+      </form>
+    <% end %>
+  </section>
+</div>
+</body>
+</html>
